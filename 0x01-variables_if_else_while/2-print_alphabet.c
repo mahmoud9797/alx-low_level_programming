@@ -7,14 +7,14 @@
  */
 int main(void)
 {
-	char ch = "a";
+        char ch = "a";
 
-	while (ch <= "z")
-	{
-		puutchar(ch);
-		ch++;
-	}
-	putchar("\n")
-	return (0)
+        while (ch <= "z")
+        {
+                puutchar(ch);
+                ch++;
+        }
+        putchar("\n")
+        return (0)
 
 }
