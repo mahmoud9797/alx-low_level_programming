@@ -1,4 +1,4 @@
-#include <stdioi.h>
+#include <stdio.h>
 
 /**
  * main - Prints the alphabetic
