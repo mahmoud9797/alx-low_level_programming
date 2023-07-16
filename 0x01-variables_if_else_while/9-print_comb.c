@@ -6,6 +6,7 @@
  *
  *Return: Always success
 */
+
 int main(void)
 {
 	int n = '0';
@@ -18,8 +19,8 @@ int main(void)
 			putchar(',');
 			putchar(' ');
 		}
-		n++
+		n++;
 	}
-	putchar('\n');
+	putchar('\n')
 	return (0);
 }
