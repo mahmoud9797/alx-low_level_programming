@@ -19,7 +19,7 @@ int main(void)
 				putchar(n1);
 				putchar(n2);
 
-				if (n1 + n2 != 17)
+				if (n1 != '8' || n2 != '9')
 				{
 					putchar(',');
 					putchar(' ');
