@@ -10,19 +10,19 @@ int main(void)
 {
 	int n1, n2, n3;
 
-	for (n1 = 0; n1 <= 9; n1++)
+	for (n1 = '0'; n1 <= '9'; n1++)
 	{
-		for (n2 = 0; n2 <= 9; n2++)
+		for (n2 = '0'; n2 <= '9'; n2++)
 		{
-			for (n3 = 0; n2 <= 9; n3++)
+			for (n3 = '0'; n2 <= '9'; n3++)
 			{
 				if (n1 < n2 && n2 < n3)
 				{
-					putchar(n1 + 48);
-					putchar(n2 + 48);
-					putchar(n3 + 48);
+					putchar(n1);
+					putchar(n2);
+					putchar(n3);
 
-					if (n1 != 7)
+					if (n1 != '7')
 					{
 						putchar(',');
 						putchar(' ');
