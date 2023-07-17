@@ -1,11 +1,10 @@
 #include <stdio.h>
 
 /**
- * main - print combination of three digits
- *
- *Return: Always (success)
-*/
-
+  * main - Prints 3 combination of numbers
+  *
+  * Return: Always (Success)
+  */
 int main(void)
 {
 	int n1, n2, n3;
@@ -14,7 +13,7 @@ int main(void)
 	{
 		for (n2 = '0'; n2 <= '9'; n2++)
 		{
-			for (n3 = '0'; n2 <= '9'; n3++)
+			for (n3 = '0'; n3 <= '9'; n3++)
 			{
 				if (n1 < n2 && n2 < n3)
 				{
@@ -31,7 +30,8 @@ int main(void)
 			}
 		}
 	}
-	putchar('\n');
-	return (0);
 
+	putchar('\n');
+
+	return (0);
 }
