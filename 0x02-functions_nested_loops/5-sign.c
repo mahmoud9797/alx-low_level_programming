@@ -6,7 +6,6 @@
  *        1 if n greater than 0.
  *        -1 if n less than 0.
 */
-
 int print_sign(int n)
 {
 	if (n > 0)
