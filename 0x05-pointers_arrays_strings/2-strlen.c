@@ -5,7 +5,7 @@
  */
 int _strlen(char *s)
 {
-	int i, c;
+	int i = 0, c =0;
 
 	for (s[i++] != '/0'; c++)
 		return (c);
