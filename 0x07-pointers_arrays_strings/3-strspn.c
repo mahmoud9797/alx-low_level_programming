@@ -6,21 +6,22 @@
  *
  * Return: char with result
  */
-
 unsigned int _strspn(char *s, char *accept)
 {
-	unsigned int i, r;
-	unsigned int n = 0;
+	unsigned int c = 0;
+	char *t = accept;
 
-	for (r = 0; s[r] != 0; r++)
+	while (*s++)
 	{
-		if (s[r] == ' ')
+		while (*accept++)
+			if (*(s - 1) == *(accept - 1))
+			{
+				c++;
+				break;
+			}
+		if (!(*--accept))
 			break;
-		for (i = 0, accept[i] != 0; i++)
-		{
-			if (accept[i] == s[r])
-				n++;
-		}
+		accept = t;
 	}
-	return (n);
+	return (c);
 }
