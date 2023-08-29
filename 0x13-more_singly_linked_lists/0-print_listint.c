@@ -7,18 +7,16 @@
  *
  * Return: number of nodes
  */
-
 size_t print_listint(const listint_t *h)
 {
-	listint_t *temp;
-	temp = h;
-	size_t c = 0;
+	size_t num = 0;
 
-	while (temp != '\0')
+	while (h)
 	{
-		printf("%d\n", temp -> n);
-		c++;
-		temp = temp -> next;
+		printf("%d\n", h->n);
+		num++;
+		h = h->next;
 	}
-	return (c);
+
+	return (num);
 }
