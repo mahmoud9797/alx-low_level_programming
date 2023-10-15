@@ -39,16 +39,16 @@ void *_realloc(void *p, size_t new_s)
  */
 void *_memcpy(void *d, const void *s, size_t n)
 {
-	char *dd;
-	char *ss;
+	char *new_d;
+	const unsigned char *new_s;
 	unsigned int i = 0;
 
-	dd = (char *)d;
-	ss = (char *)s;
+	new_d = d;
+	new_s = s;
 
 	while (i < n)
 	{
-		dd[i] = ss[i];
+		new_d[i] = new_s[i];
 		i++;
 	}
 	return (d);
