@@ -1,5 +1,8 @@
 #include "unix.h"
-
+/**
+ *takeinput - to read user input
+ *Return: line which hold the user input
+ */
 char *takeinput()
 {
 	size_t bufsize = 1024;
@@ -23,7 +26,7 @@ char *takeinput()
 			free(line);
 			exit(EXIT_SUCCESS);
 		}
-		else 
+		else
 		{
 			perror("error during reading");
 			free(line);

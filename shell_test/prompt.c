@@ -1,10 +1,14 @@
 #include "unix.h"
-
-void dis_prompt()
+/**
+ * dis_prompt - function to print $
+ *
+ */
+void dis_prompt(void)
 {
 	char *prompt = "our_shell$";
+
 	if (isatty(STDIN_FILENO))
 	{
-		write(STDOUT_FILENO, prompt, strlen(prompt));
+		write(STDOUT_FILENO, prompt, _strlen(prompt));
 	}
 }

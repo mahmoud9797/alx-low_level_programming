@@ -1,5 +1,11 @@
 #include "unix.h"
-
+/**
+ *_getline - function to read input from stream
+ *@fd: an integar reprsent file descriptor
+ *@line: pointer of string which hold text
+ *@n: is the number of bytes of test input
+ *Return: the number of bytes read
+ */
 ssize_t _getline(int fd, char **line, size_t *n)
 {
 	char buffer[reading_buf_size];
@@ -19,7 +25,7 @@ ssize_t _getline(int fd, char **line, size_t *n)
 			return (-1);
 		}
 	}
-	while ((r_bytes = read(fd, buffer, sizeof(buffer)-1)) > 0)
+	while ((r_bytes = read(fd, buffer, sizeof(buffer) - 1)) > 0)
 	{
 		if (bytes_counter + r_bytes + 1 > *n)
 		{
@@ -32,7 +38,7 @@ ssize_t _getline(int fd, char **line, size_t *n)
 			*line = temp;
 		}
 		bytes_counter += r_bytes;
-		strcat(*line, buffer);
+		_strcat(*line, buffer);
 
 		if (_strchr(buffer, '\0') == NULL)
 		{
