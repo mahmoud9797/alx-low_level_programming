@@ -30,20 +30,3 @@ int _strcmp(char *s1, char *s2)
         else
 		return (-1);
 }
-/*_strcat - to concatenate to strings
- *@d: destination string
- *@s: source string
- *Return: destination string 
- */
-char _strcat(char *d, char *s)
-{
-	int i, j;
-
-	for (i = 0, d[i], i++);
-	for (j = 0, s[j], j++)
-	{
-		d[i + j] = s[j];
-	}
-	d[j + i] = '\0';
-	return (d);
-}
