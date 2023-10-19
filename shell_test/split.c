@@ -17,7 +17,7 @@ char **split_cmd(char *s)
 	token = strtok(str_copy, tok_d);
 	while (token != NULL)
 	{
-		strtok(NULL, tok_d);
+		token = strtok(NULL, tok_d);
 		c++;
 	}
 	arr_tokens = malloc(sizeof(char *) * (c + 1));
