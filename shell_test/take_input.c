@@ -6,7 +6,7 @@
 char *takeinput()
 {
 	size_t bufsize = 1024;
-	int cmd;
+	int cmd = 0;
 	char *line = NULL;
 
 	cmd = _getline(STDIN_FILENO, &line, &bufsize);

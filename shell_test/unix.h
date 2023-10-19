@@ -5,6 +5,8 @@
 #include <unistd.h>
 #include <string.h>
 #include <sys/stat.h>
+#include <sys/types.h>
+#include <sys/wait.h>
 #define reading_buf_size 1024
 extern char **environ;
 void *_realloc(void *p, size_t new_s);
@@ -20,4 +22,6 @@ char *_getenv(char *name);
 void dis_prompt();
 char *takeinput();
 char **split_cmd(char *s);
+char *get_path(char *command);
+int excute_command(char *command, char **args);
 #endif
