@@ -30,7 +30,7 @@ char *_strcat(char *d, char *s)
 char *_strdup(char *s)
 {
 	char *d;
-	int i;
+	int i = 0;
 
 	d = (char *)malloc((_strlen(s) + 1) * sizeof(char));
 	while (s[i] != '\0')
