@@ -1,6 +1,6 @@
 #include "unix.h"
 /**
- *take_input - to read user input
+ *takeinput - to read user input
  *Return: line which hold the user input
  */
 char *takeinput()

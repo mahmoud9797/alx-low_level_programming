@@ -11,7 +11,7 @@ char **split_cmd(char *cmd)
 	char *token = NULL;
 	int i;
 	int c = 0;
-	char *tok_d = " ";
+	char *tok_d = " \n";
 
 	str_cpy = _strdup(cmd);
 	if (str_cpy == NULL)

@@ -14,23 +14,11 @@ int main(void)
            break;
 
        command = split_cmd(line)[0];
-       if (command == NULL)
-       {
-           fprintf(stderr, "Failed to split command.\n");
-           free(line);
-           continue;
-       }
+       printf("%s\n", command);
 
        path = get_path(command);
-       if (path == NULL)
-       {
-           fprintf(stderr, "Command not found.\n");
-           free(line);
-           free(command);
-           continue;
-       }
 
-       printf("Path: %s\n", path);
+       printf("Path: %s", path);
 
        free(path);
        free(line);

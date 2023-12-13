@@ -7,39 +7,41 @@
 char *get_path(char *command)
 {
 	char *envp = NULL, *token = NULL;
-	char *full_path = NULL;
+	char *full_path = NULL, *env_cpy = NULL;
 	int len_command;
 	char *path_d = ":";
 	struct stat info;
 
-	envp = _getenv("PATH");
-	if (envp == NULL)
-	{
-		return (NULL);
-	}
 	len_command = _strlen(command);
-	token = strtok(envp, path_d);
-	while (token != NULL)
+	envp = _getenv("PATH");
+	if (envp != NULL)
 	{
-		full_path = malloc(len_command + _strlen(token) + 2);
-		if (full_path == NULL)
+		env_cpy = _strdup(envp);
+		token = strtok(env_cpy, path_d);
+		while (token != NULL)
 		{
-			return (NULL);
+			full_path = malloc(len_command + _strlen(token) + 2);
+			path_append(full_path, token, command);
+			if (stat(full_path, &info) == 0)
+			{
+				free(env_cpy);
+				return (full_path);
+			}
+			else
+			{
+				free(full_path);
+				token = strtok(NULL, path_d);
+			}
 		}
-		path_append(full_path, token, command);
-		if (stat(full_path, &info) == 0 && access(full_path, X_OK) == 0)
+		free(env_cpy);
+		if (stat(command, &info) == 0)
 		{
-			return (full_path);
+			return (command);
 		}
 		else
 		{
-			free(full_path);
-			token = strtok(NULL, path_d);
+			return (NULL);
 		}
-	}
-	if (stat(command, &info) == 0)
-	{
-		return (command);
 	}
 	return (NULL);
 }
@@ -51,8 +53,8 @@ char *get_path(char *command)
  */
 void path_append(char *full_path, char *dir, char *command)
 {
-	strcpy(full_path, dir);
-	strcat(full_path, "/");
-	strcat(full_path, command);
-	strcat(full_path, "\0");
+	_strcpy(full_path, dir);
+	_strcat(full_path, "/");
+	_strcat(full_path, command);
+	_strcat(full_path, "\0");
 }
