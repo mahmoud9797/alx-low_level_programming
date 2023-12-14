@@ -1,30 +1,19 @@
 #include "unix.h"
-int main(void)
-{
-   char *line;
-   char *command;
-   char *path;
+int main(int argc, char *argv[]) {
+  char *command;
+  char *args[3];
+  (void)argv;
+  (void)argc;
 
-   while (1)
-   {
-       dis_prompt();
+  command = "ls";
+  args[0] = "ls";
+  args[1] = "-l";
+  args[2] = NULL;
 
-       line = takeinput();
-       if (line == NULL)
-           break;
+  if (execute_command(command, args) == -1) {
+      perror("Failed to execute command");
+      return EXIT_FAILURE;
+  }
 
-       command = split_cmd(line)[0];
-       printf("%s\n", command);
-
-       path = get_path(command);
-
-       printf("Path: %s", path);
-
-       free(path);
-       free(line);
-       free(command);
-   }
-
-   return 0;
+  return EXIT_SUCCESS;
 }
-

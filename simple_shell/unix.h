@@ -25,5 +25,5 @@ char *takeinput();
 char **split_cmd(char *s);
 void path_append(char *full_path, char *dir, char *command);
 char *get_path(char *command);
-int excute_command(char *command, char **args);
+int execute_command(char *command, char *args[]);
 #endif
