@@ -1,19 +1,20 @@
 #include "unix.h"
-int main(int argc, char *argv[]) {
-  char *command;
-  char *args[3];
-  (void)argv;
-  (void)argc;
+int main(void)
+{
+    char *input;
+    char **args;
 
-  command = "ls";
-  args[0] = "ls";
-  args[1] = "-l";
-  args[2] = NULL;
+    while (1) {
+        dis_prompt();
+        input = takeinput();
+        args = split_cmd(input);
+	printf("%s\n", args[0]);
+        }
 
-  if (execute_command(command, args) == -1) {
-      perror("Failed to execute command");
-      return EXIT_FAILURE;
-  }
+        free(input);
 
-  return EXIT_SUCCESS;
+            free(args);
+
+
+    return 0;
 }
